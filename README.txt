@@ -7,4 +7,4 @@ Team Mighty Ducks
 -Griffin Hammer
 
 
-Deployment server: http://steifel.net
+Deployment server: http://sdd.steifel.net
