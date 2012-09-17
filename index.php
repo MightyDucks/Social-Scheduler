@@ -1,22 +1,20 @@
 <?php
-	require "facebooksdk/facebook.php";
+        require "fbsetup.php";
+        require "connection.php";
 
-        require "mysql.php";
-        //mysql_connect("localhost", "sdd", "mightyducks") or die(mysql_error());
-        //mysql_select_db("sdd") or die(mysql_error());
-
-
-        $mysql = new mysqlHelper();
-        $mysql->connect("localhost", "sdd", "mightyducks");
-        $mysql->select_db("sdd");
-
-
-        $fb = new Facebook(array("appId" => '119211698227030', "secret" => '1e48b57d3cd9edfe80f05944366e791f'));
+        //Use mysqlHelper class
 
         echo $fb->getUser();
         echo "<br />";
-        echo $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net"));
+        echo $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
         
+
+
+        
+
+        
+
+
         $lol = "";
 
         if($fb->getUser() !== 0){
@@ -31,6 +29,4 @@
                 }
         }
         
-
-       
 ?>
