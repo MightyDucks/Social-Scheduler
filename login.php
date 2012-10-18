@@ -14,7 +14,11 @@
                 
 
                 if(count($user) == 1){
-                        //The user has already been here and is just logging in
+                        //The user has already been here and is just logging in, check to see if his/her name has updated
+                        if($user['name'] != $username){
+                                $mysql->query("UPDATE users SET name='{$username}' WHERE id={$fb->getUser()} LIMIT 1;");
+                        }
+
                         header("Location: index.php");
                 }else{
                         //User has never visited before but has logged in and is allowing us to use the information

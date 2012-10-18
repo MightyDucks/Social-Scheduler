@@ -8,10 +8,15 @@
                 echo "<pre>";
                 var_dump(facebookhelper::getFriends($fb));
                 echo "</pre>";
+
         }else{
                 //Display log in page
-                echo $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
+                $loginUrl = $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
+                
+                $guestpage = file_get_contents("./template/guestpage.tpl");
+                eval("\$content = \"".$guestpage."\";");
+                unset($guestpage);
+                echo $content;
         }
-
      
 ?>
