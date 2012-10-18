@@ -1,32 +1,17 @@
 <?php
         require "fbsetup.php";
         require "connection.php";
+        require "facebookhelper.php";
 
-        //Use mysqlHelper class
-
-        echo $fb->getUser();
-        echo "<br />";
-        echo $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
-        
-
-
-        
-
-        
-
-
-        $lol = "";
-
-        if($fb->getUser() !== 0){
-                $lol = $fb->api('me/friends?limit=500');
-                echo "<br /><pre>";
-//                var_dump($lol['data']);
+        if($fb->getUser() != 0){
+                //Display main application
+                echo "<pre>";
+                var_dump(facebookhelper::getFriends($fb));
                 echo "</pre>";
-
-
-                foreach($lol['data'] as $value){
-                        echo $value['name'].":".$value['id']."<br />";
-                }
+        }else{
+                //Display log in page
+                echo $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
         }
-        
+
+     
 ?>

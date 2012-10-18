@@ -42,7 +42,7 @@ class mysqlHelper {
                                 $this->log_error($this->mysqli->error);
                         }
 
-                        return $result;
+                        return $this->mysqli->affected_rows;
                 }
         }
 
