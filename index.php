@@ -5,17 +5,19 @@
 
         if($fb->getUser() != 0){
                 //Display main application
-                echo "<pre>";
-                var_dump(facebookhelper::getFriends($fb));
-                echo "</pre>";
+                $variables = array();
+                template("mainpage", $variables);
 
         }else{
-                //Display log in page
-                $loginUrl = $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
-                
-                $guestpage = file_get_contents("./template/guestpage.tpl");
-                eval("\$content = \"".$guestpage."\";");
-                unset($guestpage);
+                //Display guest page
+                $variables = array();
+
+                $variables['loginurl']= $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
+
+                $content = template("guestpage", $variables);
+//                $guestpage = file_get_contents("./template/guestpage.tpl");
+ //               eval("\$content = \"".$guestpage."\";");
+  //              unset($guestpage);
                 echo $content;
         }
      
