@@ -20,6 +20,10 @@ class mysqlHelper {
                 }
                 return 0;
         }
+
+        public function escapeString($string){
+                return $this->mysqli->real_escape_string($string);
+        }
         
         /*Perform a mysql query and return an array with the results if requested
         @param: queryString - String that contains a query
@@ -28,7 +32,6 @@ class mysqlHelper {
 
         public function query($queryString){
                 $result = $this->mysqli->query($queryString);
-
                 if($result instanceof mysqli_result){
                         $returnValue;
                         //Automatically fetch all rows and return
@@ -45,7 +48,10 @@ class mysqlHelper {
                         return $this->mysqli->affected_rows;
                 }
         }
-
+        
+        public function getLastId(){
+                return $this->mysqli->insert_id;
+        }
 
         /*Log all mysql errors that occur and log them to a file
         @param: $errString - string containing text about the error

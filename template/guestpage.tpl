@@ -3,6 +3,6 @@
                 <title>Test</title>
         </head>
         <body>
-                <a href='{$loginUrl}'>Log in</a>
+                <a href='{$ss_loginurl}'>Log in</a>
         </body>
 </html>

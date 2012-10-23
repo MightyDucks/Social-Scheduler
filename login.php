@@ -2,6 +2,7 @@
 	require "fbsetup.php";
         require "connection.php";
         require "facebookhelper.php";
+        require "function.php";
         
         if($fb->getUser() !== 0){
                 //User allowed access/logged in again
