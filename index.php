@@ -1,6 +1,7 @@
 <?php
-        require "fbsetup.php";
+        require "schedule.php";
         require "connection.php";
+        require "fbsetup.php";
         require "facebookhelper.php";
         require "function.php";
 
@@ -9,7 +10,8 @@
                 $variables = array();
                 $variables['navigation'] = "<a href='classsearch.php'>Class Search</a>";
                 $content =  template("index", $variables);
-                echo $content;
+                var_dump($_SESSION['userschedule']);
+                //echo $content;
         }else{
                 //Display guest page
                 $variables = array();
@@ -19,5 +21,5 @@
                 $content = template("guestpage", $variables);
                 echo $content;
         }
-     
+            
 ?>

@@ -1,6 +1,7 @@
 <?php
-        require "fbsetup.php";
+        require "schedule.php";
         require "connection.php";
+        require "fbsetup.php";
         require "facebookhelper.php";
         require "function.php";
 
@@ -8,8 +9,8 @@
         $variables = array();
 
         if(@trim($_GET['query']) != ""){
-                $_GET['query'] = $mysql->escapeString(trim($_GET['query']));
-                $results = $mysql->query("SELECT id, crn, school, coursenumber, section, name, credithours FROM classes WHERE name LIKE '%{$_GET['query']}%' OR coursemeta LIKE '%{$_GET['query']}%';");
+                $_GET['query'] = str_replace(" ", "%", $mysql->escapeString(trim($_GET['query'])));
+                $results = $mysql->query("SELECT id, crn, school, coursenumber, section, name, credithours FROM classes WHERE name LIKE '%{$_GET['query']}%' OR coursemeta LIKE '%{$_GET['query']}%' OR CONCAT('', crn) LIKE '%{$_GET['query']}%';");
 
                 for($i = 0; $i < count($results); $i++){
                         if(@$_GET['ajax']==1){

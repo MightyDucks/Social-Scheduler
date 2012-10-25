@@ -1,6 +1,7 @@
 <?php
-	require "fbsetup.php";
+        require "schedule.php";
         require "connection.php";
+	require "fbsetup.php";
         require "facebookhelper.php";
         require "function.php";
         
@@ -19,8 +20,8 @@
                         if($user['name'] != $username){
                                 $mysql->query("UPDATE users SET name='{$username}' WHERE id={$fb->getUser()} LIMIT 1;");
                         }
-
-                        header("Location: index.php");
+                        $_SESSION['userschedule'] = new schedule();
+                        $_SESSION['userschedule']->getSchedule($fb->getUser());
                 }else{
                         //User has never visited before but has logged in and is allowing us to use the information
                         $friendslist = facebookhelper::getFriends($fb);
@@ -29,11 +30,11 @@
                         foreach($friendslist as $value){
                                 $mysql->query("INSERT INTO friends SELECT {$fb->getUser()}, {$value['id']} FROM users WHERE id={$value['id']} LIMIT 1;");
                         }
-                        header("Location: index.php");
                 }
 
-        }else{
-                //User did not allow access
-                echo "Didn't allow";
         }
+        
+        header("Location: index.php");
+        
+        
 ?>

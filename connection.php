@@ -1,4 +1,5 @@
 <?php
+        session_start();
         require "mysql.php";
 
         $mysql = new mysqlHelper();
