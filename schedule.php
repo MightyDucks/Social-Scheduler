@@ -1,5 +1,5 @@
 <?php
-        include_once "course.php";
+        require "course.php";
 
         class schedule{
                 public $userid = 0;
@@ -19,11 +19,11 @@
                         //Save schedule for the specific user id that was supplied when setting up
                         $noDeleteIds = "";
                         foreach($this->classList as $value){
-                                $this->mysql->query("INSERT IGNORE INTO schedules VALUES ({$this->userid}, {$value['id']});");
+                                $mysql->query("INSERT IGNORE INTO schedules VALUES ({$this->userid}, {$value['id']});");
                                 $noDeleteIds .= "{$value['id']},";
                         }
                         $noDeleteIds = substr($noDeleteIds, 0, strlen($noDeleteIds) - 1);
-                        $this->mysql->query("DELETE FROM schedules WHERE userid={$this->userid} AND classid NOT IN ($noDeleteIds);");
+                        $mysql->query("DELETE FROM schedules WHERE userid={$this->userid} AND classid NOT IN ($noDeleteIds);");
 
                         return true;
                 }
@@ -41,14 +41,16 @@
                                         return false;
                                 }
                         }
-                        $getClass = $this->mysql->query("SELECT crn, name, school, coursenumber, section FROM classes WHERE id=$id LIMIT 1;");
+                        $getClass = $mysql->query("SELECT crn, name, school, coursenumber, section FROM classes WHERE id=$id LIMIT 1;");
                         if(count($getClass) == 1){
-
                                 $newCourse = new course($id, $getClass[0]['crn'], $getClass[0]['name'], $getClass[0]['school'], $getClass[0]['coursenumber'], $getClass[0]['section']);
-
-                                $times = $this->mysql->query("SELECT type, starttime, endtime, instructor, days FROM classtimerelation ctr, classtimes ct WHERE ctr.classid=$id AND ctr.timeid=ct.id;");
+                                $times = $mysql->query("SELECT type, HOUR(starttime)+MINUTE(starttime) as starttime, HOUR(endtime)+MINUTE(endtime) as endtime, instructor, days FROM classtimerelation ctr, classtimes ct WHERE ctr.classid=$id AND ctr.timeid=ct.id;");
+                                
+                                
                                 foreach($times as $timeblock){
                                         $newCourse->addTime($timeblock['type'], $timeblock['days'], $timeblock['starttime'], $timeblock['endtime'], $timeblock['instructor']);
+                                        
+
                                 }
                                 
 

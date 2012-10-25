@@ -10,8 +10,8 @@
                 $variables = array();
                 $variables['navigation'] = "<a href='classsearch.php'>Class Search</a>";
                 $content =  template("index", $variables);
-                var_dump($_SESSION['userschedule']);
-                //echo $content;
+
+                echo $content;
         }else{
                 //Display guest page
                 $variables = array();

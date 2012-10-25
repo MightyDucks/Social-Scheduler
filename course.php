@@ -1,5 +1,5 @@
 <?php
-        include_once "timeblock.php";
+        require "timeblock.php";
 
         class course{
                 public $id;
@@ -11,19 +11,26 @@
                 public $times;
 
                 public function __construct($id, $crn, $name, $school, $coursenumber, $section){
-
+                        $this->id = $id;
+                        $this->crn= $crn;
+                        $this->name= $name;
+                        $this->school = $school;
+                        $this->coursenumber = $coursenumber;
+                        $this->section= $section;
                 }
 
                 public function addTime($classtype, $days, $starttime, $endtime, $instructor){
-                        $insertAt = count($times)-1;
-                        $times[$insertAt] = new timeblock();
+
+                        echo "adding time";
+                        $insertAt = count($times);
+                        $this->times[$insertAt] = new timeblock();
 
 
-                        $times[$insertAt]->clastype = $type;
-                        $times[$insertAt]->days = $days;
-                        $times[$insertAt]->starttime = $starttime;
-                        $times[$insertAt]->endtime = $endtime;
-                        $times[$insertAt]->instructor = $instructor;
+                        $this->times[$insertAt]->classtype = $classtype;
+                        $this->times[$insertAt]->days = $days;
+                        $this->times[$insertAt]->starttime = $starttime;
+                        $this->times[$insertAt]->endtime = $endtime;
+                        $this->times[$insertAt]->instructor = $instructor;
                 }
 
 
