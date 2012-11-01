@@ -21,7 +21,6 @@
 
                 public function addTime($classtype, $days, $starttime, $endtime, $instructor){
 
-                        echo "adding time";
                         $insertAt = count($times);
                         $this->times[$insertAt] = new timeblock();
 
@@ -32,7 +31,11 @@
                         $this->times[$insertAt]->endtime = $endtime;
                         $this->times[$insertAt]->instructor = $instructor;
                 }
+                
 
+                public function getTimes(){
+                        return $this->times;
+                }
 
 
                 public function checktimeconflict($course){

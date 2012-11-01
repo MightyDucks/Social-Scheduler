@@ -9,7 +9,10 @@
         $variables = array();
 
         if(@trim($_GET['query']) != ""){
+                //Sanitize input
                 $_GET['query'] = str_replace(" ", "%", $mysql->escapeString(trim($_GET['query'])));
+
+
                 $results = $mysql->query("SELECT id, crn, school, coursenumber, section, name, credithours FROM classes WHERE name LIKE '%{$_GET['query']}%' OR coursemeta LIKE '%{$_GET['query']}%' OR CONCAT('', crn) LIKE '%{$_GET['query']}%';");
 
                 for($i = 0; $i < count($results); $i++){

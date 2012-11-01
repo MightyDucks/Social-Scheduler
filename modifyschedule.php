@@ -10,6 +10,10 @@
 
                 $_SESSION['userschedule']->addClass($_GET['add']);
                 header("Location: index.php");
+        }elseif(@is_numeric($_GET['remove'])){
+
+                $_SESSION['userschedule']->removeClass($_GET['remove']);
+                header("Location: index.php");
         }
 
 

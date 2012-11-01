@@ -44,7 +44,7 @@
                         $getClass = $mysql->query("SELECT crn, name, school, coursenumber, section FROM classes WHERE id=$id LIMIT 1;");
                         if(count($getClass) == 1){
                                 $newCourse = new course($id, $getClass[0]['crn'], $getClass[0]['name'], $getClass[0]['school'], $getClass[0]['coursenumber'], $getClass[0]['section']);
-                                $times = $mysql->query("SELECT type, HOUR(starttime)+MINUTE(starttime) as starttime, HOUR(endtime)+MINUTE(endtime) as endtime, instructor, days FROM classtimerelation ctr, classtimes ct WHERE ctr.classid=$id AND ctr.timeid=ct.id;");
+                                $times = $mysql->query("SELECT type, HOUR(starttime)*60+MINUTE(starttime) as starttime, HOUR(endtime)*60+MINUTE(endtime) as endtime, instructor, days FROM classtimerelation ctr, classtimes ct WHERE ctr.classid=$id AND ctr.timeid=ct.id;");
                                 
                                 
                                 foreach($times as $timeblock){
@@ -68,21 +68,25 @@
                                 return false;
                         }
                         
-                        for($i = 0; $i < count($classList); $i++){
-                                if($classList[$i]['id'] == $id){
-                                        unset($classList[$i]);
+                        for($i = 0; $i < count($this->classList); $i++){
+                                if($this->classList[$i]['id'] == $id){
+                                        unset($this->classList[$i]);
                                 }
                         }
 
-                        if(saveSchedule()){
+                        if($this->saveSchedule()){
                                 return true;
                         }
                         return false;
                 }
-
+                
                 public function getSchedule($userid){
                         global $mysql;
                         $this->userid = $userid;
+                        $classes = $mysql->query("SELECT classid FROM schedules WHERE userid={$userid};");
+                        foreach($classes as $course){
+                                $this->addClass($course['classid']);
+                        }
                 }
         }
 
