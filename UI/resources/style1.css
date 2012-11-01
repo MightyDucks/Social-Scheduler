@@ -1,18 +1,15 @@
 /* The Mighty Ducks */
 
-/* Official NHL Colors: */
-/* Yellow: #fdb827 */
-/* Green: #027a85 */
-/* Purple: #492349 */
-/* Grey: #999999 */
+/* Cherry Red: #C40000 */
 
 html {
     height: 100%;
+    overflow-y: scroll;
 }
 
 body {
     height: 100%;
-    background: #027a85 url(bgfade_fd_b.png) top center repeat-x;
+    background: #C40000 url(bgfade_fd_w.png) top center repeat-x;
     text-align: center;
     font-family: Helvetica, Verdana, Arial, sans-serif;
     padding: 0px;
@@ -39,13 +36,24 @@ body {
 }
 #maincontent {
     background: #999999;
+<<<<<<< HEAD
     padding-bottom: 105px;
+=======
+    padding-bottom: 55px;
+>>>>>>> UI-Dev
 }
 #footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
-    height: 100px;
+    height: 30px;
     width: 100%;
     margin-top: 5px;
-    background: #492349;
+    padding-top: 20px;
+    color: white;
+    /*background: #666;*/
 }
+#footer span {
+    position: relative;
+    bottom: 0;
+}
+>>>>>>> UI-Dev
