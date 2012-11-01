@@ -30,5 +30,5 @@
         }
         //Set up and display the page
         $content = template("classsearch", $variables);
-        echo template("index", array('maincontent' => $content, 'navigation' =>"<a href='index.php'>Home</a> <a href='classsearch.php'>Class Search</a>" ));
+        echo template("index", array('maincontent' => $content, 'navigation' =>"<a href='index.php'>Home</a> <a href='classsearch.php'>Class Search</a> <a href='logout.php'>Logout</a>" ));
 ?>

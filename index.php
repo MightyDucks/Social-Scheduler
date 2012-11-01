@@ -8,7 +8,7 @@
         if($fb->getUser() != 0){
                 //Display main application
                 $variables = array();
-                $variables['navigation'] = "<a href='index.php'>Home</a> <a href='classsearch.php'>Class Search</a>";
+                $variables['navigation'] = "<a href='index.php'>Home</a> <a href='classsearch.php'>Class Search</a> <a href='logout.php'>Logout</a>";
                 $content =  template("index", $variables);
 
                 echo $content;

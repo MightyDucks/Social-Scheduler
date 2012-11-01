@@ -16,7 +16,7 @@
         </div>
         <!-- Above could be a php include? I haven't worked much with php as I've said. -->
         <div id="maincontent">
-                {$ss_loginurl}
+                <a href='{$ss_loginurl}'>Log in</a>
         </div>
         <div id="footer">
             <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
