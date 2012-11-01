@@ -18,14 +18,11 @@
         <div id="maincontent">
                 {$ss_maincontent}
         </div>
+
         <div id="footer">
-            <div id="footercolorbars">
-                <div id="footercontent">
-                    These borders were...<br/>
-                    ...testing out the color transition scheme from the Jerseys, I think it looks ugly and terrible so I'll think of something else.
-                </div>
-            </div>
+            <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
         </div>
+
     </div>
 </body>
 </html>

@@ -1,8 +1,26 @@
-<html>
-        <head>
-                <title>Test</title>
-        </head>
-        <body>
-                <a href='{$ss_loginurl}'>Log in</a>
-        </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>UI Mockup #1</title>
+<script type="text/javascript" src="resources/jquery-1.8.2.min.js"></script>
+<link type="text/css" href="resources/style1.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+                {$ss_header}
+        </div>
+        <div id="nav">
+                {$ss_navigation}
+        </div>
+        <!-- Above could be a php include? I haven't worked much with php as I've said. -->
+        <div id="maincontent">
+                {$ss_loginurl}
+        </div>
+        <div id="footer">
+            <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
+        </div>
+    </div>
+</body>
 </html>
