@@ -35,12 +35,9 @@ body {
     margin-bottom: 5px;
 }
 #maincontent {
-    background: #999999;
-<<<<<<< HEAD
-    padding-bottom: 105px;
-=======
+    background: #999;
+    min-height: 500px;
     padding-bottom: 55px;
->>>>>>> UI-Dev
 }
 #footer {
     position: relative;
@@ -56,4 +53,3 @@ body {
     position: relative;
     bottom: 0;
 }
->>>>>>> UI-Dev
