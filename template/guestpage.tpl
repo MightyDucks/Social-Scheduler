@@ -18,7 +18,7 @@
         <div id="maincontent">
                 <a href='{$ss_loginurl}'>Log in</a>
         </div>
-        <div id="footer">
+        <div align="center" id="footer">
             <iframe src="https://www.facebook.com/plugins/like.php?href=sdd.steifel.net"
                         scrolling="no" frameborder="0"
                         style="border:none; width:450px; height:80px"></iframe>
