@@ -19,10 +19,10 @@
                 <a href='{$ss_loginurl}'>Log in</a>
         </div>
         <div id="footer">
-            <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
             <iframe src="https://www.facebook.com/plugins/like.php?href=sdd.steifel.net"
                         scrolling="no" frameborder="0"
                         style="border:none; width:450px; height:80px"></iframe>
+            <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
         </div>
     </div>
 </body>
