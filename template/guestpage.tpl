@@ -10,6 +10,9 @@
     <div id="container">
         <div id="header">
                 {$ss_header}
+                <iframe src="https://www.facebook.com/plugins/like.php?href=sdd.steifel.net"
+                        scrolling="no" frameborder="0"
+                        style="border:none; width:450px; height:80px"></iframe>
         </div>
         <div id="nav">
                 {$ss_navigation}
