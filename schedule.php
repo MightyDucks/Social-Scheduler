@@ -67,10 +67,14 @@
                         if($this->userid == 0){
                                 return false;
                         }
-                        
+
+
+
                         for($i = 0; $i < count($this->classList); $i++){
                                 if($this->classList[$i]['id'] == $id){
                                         unset($this->classList[$i]);
+                                        $this->classList=array_values($this->classList);
+                                        break;
                                 }
                         }
 
