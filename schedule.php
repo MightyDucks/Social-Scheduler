@@ -88,8 +88,10 @@
                         global $mysql;
                         $this->userid = $userid;
                         $classes = $mysql->query("SELECT classid FROM schedules WHERE userid={$userid};");
-                        foreach($classes as $course){
-                                $this->addClass($course['classid']);
+                        if($classes != null){
+                                foreach($classes as $course){
+                                        $this->addClass($course['classid']);
+                                }
                         }
                 }
         }
