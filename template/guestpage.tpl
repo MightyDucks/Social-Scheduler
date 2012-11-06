@@ -17,9 +17,9 @@
               js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=119211698227030";
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-login-button" data-show-faces="false" data-width="200" data-max-rows="1"></div>
         <div id="header">
                 {$ss_header}
-                <div class="fb-login-button" data-show-faces="false" data-width="200" data-max-rows="1"></div>
         </div>
         <div id="nav">
                 {$ss_navigation}
