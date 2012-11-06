@@ -18,7 +18,6 @@
         <!-- Above could be a php include? I haven't worked much with php as I've said. -->
         <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
         <div id="maincontent">
-                <a href='{$ss_loginurl}'>Log in</a>
         </div>
         <div id="footer">
             <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
