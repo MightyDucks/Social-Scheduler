@@ -15,9 +15,8 @@
                         if($this->userid == 0){
                                 return false;
                         }
-
                         //Save schedule for the specific user id that was supplied when setting up
-                        $noDeleteIds = "";
+                        $noDeleteIds = "-1,";
                         foreach($this->classList as $value){
                                 $mysql->query("INSERT IGNORE INTO schedules VALUES ({$this->userid}, {$value['id']});");
                                 $noDeleteIds .= "{$value['id']},";
