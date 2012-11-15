@@ -19,7 +19,7 @@
             }(document, 'script', 'facebook-jssdk'));</script>
         <div id="header">
                 {$ss_header}
-                <div class="fb-login-button" data-href="http://sdd.steifel.net/" data-show-faces="false" data-width="200" data-max-rows="1"></div>
+                <a href='{$ss_loginurl}'></a>
         </div>
         <div id="nav">
                 {$ss_navigation}
