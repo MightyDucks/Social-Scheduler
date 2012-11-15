@@ -29,8 +29,8 @@
 
         <div id="footer">
             <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
-            <div class="fb-like" data-href="http://sdd.steifel.net" data-send="true" data-width="450" data-show-faces="true"></div>
         </div>
+        <div class="fb-like" data-href="http://sdd.steifel.net" data-send="true" data-width="450" data-show-faces="true"></div>
 
     </div>
 </body>
