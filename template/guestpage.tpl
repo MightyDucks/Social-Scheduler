@@ -4,6 +4,7 @@
 <title>UI Mockup #1</title>
 <script type="text/javascript" src="resources/jquery-1.8.2.min.js"></script>
 <link type="text/css" href="resources/style1.css" rel="stylesheet">
+<link type='text/css" href="resources/facebook_login_button.png" rel="stylesheet">
 
 
 </head>
@@ -19,7 +20,8 @@
             }(document, 'script', 'facebook-jssdk'));</script>
         <div id="header">
                 {$ss_header}
-                <a href='{$ss_loginurl}'></a>
+                <a href='{$ss_loginurl}'><img src="facebook_login_button.png" border="0"/></a>
+                
         </div>
         <div id="nav">
                 {$ss_navigation}
