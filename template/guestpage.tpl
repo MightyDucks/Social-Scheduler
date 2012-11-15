@@ -20,11 +20,11 @@
             }(document, 'script', 'facebook-jssdk'));</script>
         <div id="header">
                 {$ss_header}
-                <a href='{$ss_loginurl}'><img src = "resources/facebook_login_button.png" /></a>
                 
         </div>
         <div id="nav">
                 {$ss_navigation}
+                <a href='{$ss_loginurl}'><img src = "resources/facebook_login_button.png" /></a>
         </div>
         <!-- Above could be a php include? I haven't worked much with php as I've said. -->
         <div id="maincontent">
