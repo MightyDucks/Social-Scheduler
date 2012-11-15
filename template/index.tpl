@@ -22,7 +22,7 @@
         <div id="nav">
             {$ss_navigation}
         </div>
-        <!-- Above could be a php include? I haven't worked much with php as I've said. -->
+        
         <div id="maincontent">
                 {$ss_maincontent}
         </div>
