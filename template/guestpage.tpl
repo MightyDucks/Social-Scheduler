@@ -28,7 +28,6 @@
         </div>
         <!-- Above could be a php include? I haven't worked much with php as I've said. -->
         <div id="maincontent">
-                {$ss_loginurl}
         </div>
         <div id="footer">
             <span>&copy; "The Mighty Ducks" - An SD&D project, Fall 2012</span>
