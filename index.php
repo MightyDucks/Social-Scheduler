@@ -16,13 +16,11 @@
                         $variables['maincontent'] .= "{$course->school}-{$course->coursenumber} Section {$course->section} --- {$course->name} <br /><a href='modifyschedule.php?remove={$course->id}'>Remove from schedule</a><br />";
                         
 
-
-
                         //Display times
                         foreach($course->times as $timeblock){
-                                $variables['maincontent'] .= "{$timeblock->classtype} {$timeblcok->days} "
-                                .(($timeblock->starttime - $timeblock->starttime%60)/60).":".($timeblock->starttime%60)." - "
-                                .(($timeblock->endtime-$timeblock->endtime%60)/60).":".($timeblock->endtime%60)." with {$timeblock->instructor}<br />";
+                                $variables['maincontent'] .= "{$timeblock->classtype} {$timeblock->days} "
+                                .(($timeblock->starttime - $timeblock->starttime%60)/60).":".(sprintf("%02d",$timeblock->starttime%60))." - "
+                                .(($timeblock->endtime-$timeblock->endtime%60)/60).":".(sprintf("%02d",$timeblock->endtime%60))." with {$timeblock->instructor}<br />";
                         }
 
 
@@ -37,9 +35,6 @@
                                 }
                         }
                         $variables['maincontent'] .= "<br />";
-
-
-
                 }
                 
 
