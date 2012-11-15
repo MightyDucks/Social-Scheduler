@@ -4,7 +4,7 @@
 <title>UI Mockup #1</title>
 <script type="text/javascript" src="resources/jquery-1.8.2.min.js"></script>
 <link type="text/css" href="resources/style1.css" rel="stylesheet">
-<link type='text/css" href="resources/facebook_login_button.png" rel="stylesheet">
+<link type='text/png" href="resources/facebook_login_button.png" rel="stylesheet">
 
 
 </head>
