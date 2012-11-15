@@ -20,7 +20,7 @@
             }(document, 'script', 'facebook-jssdk'));</script>
         <div id="header">
                 {$ss_header}
-                <a href='{$ss_loginurl}'><img src="facebook_login_button.png" border="0"/></a>
+                <a href='{$ss_loginurl}'><img src = "resources/facebook_login_button.png" /></a>
                 
         </div>
         <div id="nav">
