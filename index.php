@@ -38,7 +38,7 @@
                 }
                 
 
-                $variables['navigation'] = "<a href='index.php'>Home</a> <a href='classsearch.php'>Class Search</a> <a href='logout.php'>Logout</a>";
+                $variables['navigation'] = "<div><a href='index.php'>Home</a></div> <div><a href='classsearch.php'>Class Search</a></div> <div><a href='logout.php'>Logout</a></div>";
                 $content =  template("index", $variables);
 
                 echo $content;

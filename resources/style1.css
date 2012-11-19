@@ -31,18 +31,23 @@ body {
 }
 #nav {
     height: 50px;
-    background: blue;
     margin-bottom: 5px;
 }
-#nav a {
-    background: white;
-}
-#nav a:hover {
+#nav div{
+    padding: 2px;
     background: #CCC;
-    border: 1px solid white;
+    height: 46px;
+}
+#nav div:hover {
+    padding: 0px;
+    background: #AAA;
+    border: 2px solid white;
+}
+#nav a {
+    display: none;
 }
 #maincontent {
-    background: #999999;
+    background: #999;
     min-height: 500px;
     padding-bottom: 105px;
 }
