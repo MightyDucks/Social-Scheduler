@@ -25,9 +25,11 @@ body {
 
 #header {
     height: 70px;
+    width: 940px;
+    margin: 0px;
     margin-bottom: 5px;
-    padding: 5px;
-    background: url(header.png) top center;
+    padding: 0px;
+    background: url(header.png) top center no-repeat;
 }
 #nav {
     height: 50px;
