@@ -37,6 +37,7 @@ body {
     padding: 2px;
     background: #CCC;
     height: 46px;
+    width: 60px;
 }
 #nav div:hover {
     padding: 0px;
