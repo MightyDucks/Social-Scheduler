@@ -34,13 +34,15 @@ body {
     margin-bottom: 5px;
 }
 #nav div{
-    padding: 2px;
+    display: inline;
+    margin: 2px;
     background: #CCC;
     height: 46px;
-    width: 60px;
+    width: 200px;
 }
 #nav div:hover {
-    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
     background: #AAA;
     border: 2px solid white;
 }
