@@ -16,7 +16,7 @@
                         $endtime = $time->endtime;
                         $onDays = $time->days;
 
-
+                        
                         $daysToFill;
                         for($i = 0; $i < strlen($onDays); $i++){
                                 switch($onDays[$i]){
@@ -40,7 +40,9 @@
 
                         $starty = $daysoffset + ($height/count($times)/60)*($starttime - 480) + 1;
                         $endy = $daysoffset + ($height/count($times)/60)*($endtime - 480) + 1 - 2;
+                        
 
+                        //Draw for each day in each time slot
                         foreach($daysToFill as $slot){
                                 $startx = $slot*($width-100)/count($days)+ 1 + 100;
                                 $endx = $slot*($width-100)/count($days)+ 1 + ($width-100)/count($days) - 3 + 100;
@@ -49,10 +51,12 @@
                                 imagerectangle($image, $startx, $starty, $endx, $endy, imagecolorallocate($image, 0,0,0));
                                 imagefilledrectangle($image,  $startx, $starty, $endx, $endy, imagecolorallocate($image, 250, 250, 250));
                                 
+
+                                //Make sure text doesn't overflow
                                 $fontWidth = imagefontwidth(2);
                                 $writename = (strlen($name)*$fontWidth >= $endx-$startx)  ? substr($name, 0, ($endx-$startx)/$fontWidth-3)."..." : $name;
                                 $writeinstructor  = (strlen($instructor)*$fontWidth >= $endx-$startx)  ? substr($instructor, 0, ($endx-$startx)/$fontWidth-3)."..." : $instructor;
-
+                                //Write out strings for text area
                                 $black = imagecolorallocate($image, 0, 0,0);
                                 imagestring($image, 2, $startx + 2, $starty + 2, $writename, $black);
                                 imagestring($image, 2, $startx + 2, $starty + 2 + imagefontheight(2) + 2, $writeinstructor, $black);
