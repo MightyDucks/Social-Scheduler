@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>UI Mockup #1</title>
+<title>Social Scheduler</title>
 <script type="text/javascript" src="resources/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="resources/script1.js"></script>
 <link type="text/css" href="resources/style1.css" rel="stylesheet">
