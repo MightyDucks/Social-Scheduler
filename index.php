@@ -9,7 +9,9 @@
                 //Display main application
                 $variables = array();
 
-                
+                if(@$_GET['post']==true) $variables['maincontent'] .= "Your schedule has been posted to facebook!<br /><br />";
+
+                $variables['maincontent'] .= "<a href='toimage.php'>Post schedule to facebook</a><br /><br />";
                 //Go through all the courses and display them
                 foreach($_SESSION['userschedule']->classList as $course){
                         $course = $course['data'];
@@ -45,9 +47,8 @@
         }else{
                 //Display guest page
                 $variables = array();
-
-                $variables['loginurl']= $fb->getLoginUrl(array("redirect_uri" => "http://sdd.steifel.net/login.php"));
-
+//array("scope" => "user_photos,publish_stream,photo_upload,user_status", 
+                $variables['loginurl']= $fb->getLoginUrl(array("scope"=>"user_photos,publish_stream,photo_upload", "redirect_uri" => "http://sdd.steifel.net/login.php"));
                 $content = template("guestpage", $variables);
                 echo $content;
         }
