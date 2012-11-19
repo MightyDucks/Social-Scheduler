@@ -31,8 +31,15 @@ body {
 }
 #nav {
     height: 50px;
-    background: white;
+    background: blue;
     margin-bottom: 5px;
+}
+#nav a {
+    background: white;
+}
+#nav a:hover {
+    background: #CCC;
+    border: 1px solid white;
 }
 #maincontent {
     background: #999999;
