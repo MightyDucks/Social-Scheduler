@@ -23,9 +23,7 @@
 
 
 
-                
-
-
+                //Go through all results for the classes and set them up for display               
                 for($i = 0; $i < count($results); $i++){
                         
 
@@ -58,5 +56,5 @@
         }
         //Set up and display the page
         $content = template("classsearch", $variables);
-        echo template("index", array('maincontent' => $content, 'navigation' =>"<a href='index.php'>Home</a> <a href='classsearch.php'>Class Search</a> <a href='logout.php'>Logout</a>" ));
+        echo template("index", array('maincontent' => $content, 'navigation' =>"<div onclick=\"location.href='index.php'\">Home</div> <div onclick=\"location.href='classsearch.php'\">Class Search</div> <div onclick=\"location.href='logout.php'\">Logout</div>" ));
 ?>

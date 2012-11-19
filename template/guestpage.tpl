@@ -25,7 +25,7 @@
         </div>
         <div id="nav">
                 {$ss_navigation}
-                <div onclick=\"location.href='{$ss_loginurl}'\"><img src = "resources/facebook_login_button.png" /></div>
+                <div onclick="location.href='{$ss_loginurl}'"><img src = "resources/facebook_login_button.png" /></div>
         </div>
         <!-- Above could be a php include? I haven't worked much with php as I've said. -->
         <div id="maincontent">

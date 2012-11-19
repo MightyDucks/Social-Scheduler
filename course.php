@@ -30,11 +30,11 @@
                 }
 
                 public function addTime($classtype, $days, $starttime, $endtime, $instructor){
-
+                        //Simply adding in times to the times array
                         $insertAt = count($this->times);
                         $this->times[$insertAt] = new timeblock();
-
-
+                        
+                        
                         $this->times[$insertAt]->classtype = $classtype;
                         $this->times[$insertAt]->days = $days;
                         $this->times[$insertAt]->starttime = $starttime;
