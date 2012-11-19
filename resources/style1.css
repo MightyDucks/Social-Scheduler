@@ -27,7 +27,7 @@ body {
     height: 70px;
     margin-bottom: 5px;
     padding: 5px;
-    background: grey;
+    background: url(header.png) top center;
 }
 #nav {
     height: 50px;
@@ -35,15 +35,17 @@ body {
 }
 #nav div{
     display: inline;
-    margin: 2px;
-    background: #CCC;
     height: 46px;
-    width: 200px;
+    min-width: 200px;
+    background: #CCC;
+    border: 2px solid #CCC;
 }
 #nav div:hover {
     margin: 0px;
     cursor: pointer;
     background: #AAA;
+    height: 46px;
+    min-width: 200px;
     border: 2px solid white;
 }
 #nav a {
