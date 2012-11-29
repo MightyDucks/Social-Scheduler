@@ -26,6 +26,8 @@
                 //Go through all results for the classes and set them up for display               
                 for($i = 0; $i < count($results); $i++){
                         
+                        $courseObj = new course($results[$i]['id'], $results[$i]['crn'], $results[$i]['name'], $results[$i]['school'], $results[$i]['coursenumber'], $results[$i]['section']);
+
 
                         //Get list of friends taking this class
                         $friends = $mysql->query("SELECT name FROM users, schedules WHERE users.id=userid AND NOT users.id={$fb->getUser()} AND classid={$results[$i]['id']};");
@@ -36,14 +38,27 @@
                                 }
                         }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~ADD IN CONVERTING TO A COURSE AND DISPLAYING TIMES INSTEAD OF JUST DUMPING STRINGS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                        //Time information
+                        foreach($courseObj->times as $timeblock){
+                                $results[$i]['coursetimes'] .= "{$timeblock->classtype} {$timeblock->days} "
+                                .(($timeblock->starttime - $timeblock->starttime%60)/60).":".(sprintf("%02d",$timeblock->starttime%60))." - "
+                                .(($timeblock->endtime-$timeblock->endtime%60)/60).":".(sprintf("%02d",$timeblock->endtime%60))." with {$timeblock->instructor}<br />";
+                        }
 
 
                         if(@$_GET['ajax']==1){
                                 //No need to run through templating responding with json
                                 $variables[] = array('id' => $results[$i]['id'], 'crn' => $results[$i]['crn'], 'school' => $results[$i]['school'], 'coursenumber' => $results[$i]['coursenumber'], 'section' => $results[$i]['section'], 'name' => $results[$i]['name'], 'credits' => $results[$i]['credithours'], "friends" => $results[$i]['freinds']);
                         }else{
-                                $variables['results'] .= template("searchresult", $results[$i]);
+                                
+                                if($_SESSION['userschedule']->checkfit($courseObj)){
+                                        $variables['results'] .= template("searchresult", $results[$i]);
+
+
+                                }else{
+                                        $variables['results'] .= template("conflictresult", $results[$i]);
+                                }
                         }
                 }
         }

@@ -7,7 +7,13 @@
 
                 public function checkfit($courseObj){
                         //Check against other classes that are added for timing conflict
-                        //~~~~~~~~~~~~~NOT IMPLEMENTED YET~~~~~~~~~~~~~~~~~~
+                        
+                        foreach($this->classList as $course){
+                                if(!$course['data']->checktimeconflict($courseObj)){
+                                        return false;
+                                }
+                        }
+
                         return true;
                 }
 
