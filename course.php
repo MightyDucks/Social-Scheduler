@@ -19,10 +19,8 @@
                         $this->coursenumber = $coursenumber;
                         $this->section= $section;
 
-
                         //get the course times
                         $gettimes = $mysql->query("SELECT type, HOUR(starttime)*60+MINUTE(starttime) as starttime, HOUR(endtime)*60+MINUTE(endtime) as endtime, instructor, days FROM classtimerelation ctr, classtimes ct WHERE ctr.classid={$this->id} AND ctr.timeid=ct.id;");
-                                
                         foreach($gettimes as $timeblock){
                                 $this->addTime($timeblock['type'], $timeblock['days'], $timeblock['starttime'], $timeblock['endtime'], $timeblock['instructor']);
                         }

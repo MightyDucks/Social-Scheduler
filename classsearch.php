@@ -71,5 +71,5 @@
         }
         //Set up and display the page
         $content = template("classsearch", $variables);
-        echo template("index", array('maincontent' => $content, 'navigation' =>"<div onclick=\"location.href='index.php'\">Home</div> <div onclick=\"location.href='classsearch.php'\">Class Search</div> <div onclick=\"location.href='logout.php'\">Logout</div>" ));
+        echo template("index", array('maincontent' => $content, 'navigation' =>"<div onclick=\"location.href='index.php'\">Home</div> <div onclick=\"location.href='classsearch.php'\">Class Search</div>  <div onclick=\"location.href='inputschedule.php'\">Input CRNs</div> <div onclick=\"location.href='logout.php'\">Logout</div>" ));
 ?>
