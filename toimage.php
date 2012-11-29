@@ -17,7 +17,7 @@
                         $onDays = $time->days;
 
                         
-                        $daysToFill;
+                        $daysToFill = array();
                         for($i = 0; $i < strlen($onDays); $i++){
                                 switch($onDays[$i]){
                                         case "M":
@@ -41,7 +41,7 @@
                         $starty = $daysoffset + ($height/count($times)/60)*($starttime - 480) + 1;
                         $endy = $daysoffset + ($height/count($times)/60)*($endtime - 480) + 1 - 2;
                         
-
+                        
                         //Draw for each day in each time slot
                         foreach($daysToFill as $slot){
                                 $startx = $slot*($width-100)/count($days)+ 1 + 100;
